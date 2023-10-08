@@ -3,10 +3,12 @@
      wageAmount = document.querySelector('[name="wage[amount]"]');
    document.querySelector('[name="wage[zone_id]"]').selectedIndex = 1,
   document.querySelector('[name="wage[wage_type]"]').selectedIndex = 1;
-  document.querySelectorAll('[name="reason"]')[0].selectedIndex = 2;
+  document.querySelectorAll('[name="reason"]')[1].selectedIndex = 2;
+  console.log(document.querySelectorAll('[name="reason"]'))
   realFormSubmitInput = document.querySelector('[name="commit"]');
   wageAmount.value = '15:00';
 
+  var addWage = document.querySelector('.js-toggle-next');
 
 
 
@@ -17,14 +19,16 @@
     
           realForm.addEventListener("submit", (e)=> {
             e.preventDefault()
-            setTimeout(()=>{
-                location.reload();
+            
+           location.reload();
 
-            }, 1000)
 
           })
-
-          realFormSubmitInput.click()
+          addWage.click();
+          setTimeout(()=>{
+            realFormSubmitInput.click()
+        }, 3000)
+      
        
       
   }
